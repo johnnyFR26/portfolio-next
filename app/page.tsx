@@ -137,13 +137,11 @@ export default function Portfolio() {
   const [loading, setLoading] = useState(true)
   const [projects, setProjects] = useState<Project[]>([])
 
-  // Replace with your GitHub username
-  const GITHUB_USERNAME = "octocat" // Change this to your GitHub username
+  const GITHUB_USERNAME = "johnnyFR26"
 
   useEffect(() => {
     setIsVisible(true)
 
-    // Fetch GitHub data
     const fetchGitHubData = async () => {
       setLoading(true)
       const [user, repos] = await Promise.all([fetchGitHubUser(GITHUB_USERNAME), fetchGitHubRepos(GITHUB_USERNAME)])
