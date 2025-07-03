@@ -181,14 +181,14 @@ export default function Portfolio() {
 
   const skills = {
     Frontend: [
+      { name: "Angular", level: 100 },
       { name: "React/Next.js", level: 95 },
       { name: "TypeScript", level: 90 },
       { name: "Tailwind CSS", level: 88 },
-      { name: "Vue.js", level: 75 },
     ],
     Backend: [
-      { name: "Node.js", level: 85 },
-      { name: "Python", level: 80 },
+      { name: "Node.js", level: 95 },
+      { name: "Go", level: 80 },
       { name: "PostgreSQL", level: 82 },
       { name: "MongoDB", level: 78 },
     ],
@@ -196,7 +196,7 @@ export default function Portfolio() {
       { name: "Git/GitHub", level: 92 },
       { name: "Docker", level: 75 },
       { name: "AWS", level: 70 },
-      { name: "GraphQL", level: 73 },
+      { name: "Pulumi/terraform", level: 73 },
     ],
   }
 
