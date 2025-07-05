@@ -551,7 +551,7 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
       <footer className="py-8 px-4 border-t border-gray-800">
         <div className="container mx-auto text-center text-gray-400">
           <p>
-            &copy; {new Date().getFullYear()} Your Name. {dict.footer.builtWith}
+            &copy; {new Date().getFullYear()} Johnny Fontes Rabelo. {dict.footer.builtWith}
           </p>
         </div>
       </footer>
