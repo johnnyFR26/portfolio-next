@@ -192,6 +192,14 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
           image: "/placeholder.svg",
           gitHubUrl: "https://github.com/johnnyFR26/minerva",
           liveUrl: "https://minerva-staging.vercel.app/",
+        },
+        {
+          title: "E-Commerce",
+          description: "E-Commerce platform",
+          tech: ["Angular", "TypeScript", "Adonis", "Restfull", "websockets"],
+          image: "/placeholder.svg",
+          gitHubUrl: "https://github.com/johnnyFR26/marktplace",
+          liveUrl: "https://marketplace-dun-beta.vercel.app/mundoburguer",
         }
       ]
       setProjects(projectsData)
