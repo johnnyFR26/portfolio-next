@@ -302,12 +302,15 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
                 {dict.hero.getInTouch}
               </Button>
               <Button
+                asChild
                 size="lg"
                 variant="outline"
                 className="border-gray-600 text-white hover:bg-gray-800 bg-transparent"
               >
-                <Github className="w-4 h-4 mr-2" />
-                {dict.hero.viewGithub}
+                <Link href="https://github.com/johnnyFR26">
+                  <Github className="w-4 h-4 mr-2" />
+                  {dict.hero.viewGithub}
+                </Link>
               </Button>
             </div>
             <div className="flex gap-6 justify-center">
