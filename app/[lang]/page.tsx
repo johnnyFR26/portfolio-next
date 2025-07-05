@@ -185,6 +185,14 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
           gitHubUrl: "https://github.com/johnnyFR26/finanz",
           liveUrl: "https://finanz-beta.vercel.app/",
         },
+        {
+          title: "Minerva",
+          description: "Management app of exams for universities",
+          tech: ["Angular", "TypeScript", "Fastify", "GraphQL", "Prisma", "Nx"],
+          image: "/placeholder.svg",
+          gitHubUrl: "https://github.com/johnnyFR26/minerva",
+          liveUrl: "https://minerva-staging.vercel.app/",
+        }
       ]
       setProjects(projectsData)
     }
