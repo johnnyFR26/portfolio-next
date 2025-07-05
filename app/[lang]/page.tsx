@@ -39,6 +39,8 @@ interface Project {
   description: string
   tech: string[]
   image?: string
+  gitHubUrl: string
+  liveUrl: string
 }
 
 // Animated counter component
@@ -172,12 +174,16 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
           description: "Game of guessing animals",
           tech: ["Angular", "TypeScript", "Adonis"],
           image: "/placeholder.svg",
+          gitHubUrl: "https://github.com/johnnyFR26/animaldle",
+          liveUrl: "https://animaldle-etec.vercel.app/",
         },
         {
           title: "Finanz",
           description: "Financial management app with AI assistant",
           tech: ["Angular", "TypeScript", "Fastify", "GraphQL", "Prisma", "n8n"],
           image: "/placeholder.svg",
+          gitHubUrl: "https://github.com/johnnyFR26/finanz",
+          liveUrl: "https://finanz-beta.vercel.app/",
         },
       ]
       setProjects(projectsData)
@@ -500,16 +506,21 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
                   </div>
                   <div className="flex gap-2">
                     <Button
+                      asChild
                       size="sm"
                       variant="outline"
                       className="border-gray-600 text-white hover:bg-gray-700 bg-transparent"
                     >
+                      <Link href={project.gitHubUrl}>
                       <Github className="w-4 h-4 mr-2" />
                       {dict.projects.code}
+                      </Link>
                     </Button>
-                    <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
+                    <Button asChild size="sm" className="bg-blue-600 hover:bg-blue-700">
+                      <Link href={project.liveUrl}>
                       <ExternalLink className="w-4 h-4 mr-2" />
                       {dict.projects.liveDemo}
+                      </Link>
                     </Button>
                   </div>
                 </CardContent>
