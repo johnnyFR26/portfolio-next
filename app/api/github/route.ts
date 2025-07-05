@@ -11,13 +11,13 @@ export async function GET(request: Request) {
         headers: {
           Accept: "application/vnd.github.v3+json",
           // Add your GitHub token here for higher rate limits
-           'Authorization': `token ${process.env.GITHUB_TOKEN}`,
+          Authorization: `token ${process.env.GITHUB_TOKEN}`,
         },
       }),
       fetch(`https://api.github.com/users/${username}/repos?sort=stars&per_page=100`, {
         headers: {
           Accept: "application/vnd.github.v3+json",
-           'Authorization': `token ${process.env.GITHUB_TOKEN}`,
+          Authorization: `token ${process.env.GITHUB_TOKEN}`,
         },
       }),
     ])

@@ -1,0 +1,52 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Full Stack Developer",
+    "description": "Crafting digital experiences with modern technologies. Passionate about clean code, user experience, and innovative solutions.",
+    "getInTouch": "Get In Touch",
+    "viewGithub": "View GitHub"
+  },
+  "about": {
+    "title": "About Me",
+    "stats": {
+      "projectsCompleted": "Projects Completed",
+      "githubRepos": "GitHub Repos",
+      "totalStars": "Total Stars",
+      "followers": "Followers"
+    },
+    "github": {
+      "title": "GitHub Activity",
+      "totalRepositories": "Total Repositories",
+      "totalStars": "Total Stars",
+      "totalForks": "Total Forks",
+      "followers": "Followers"
+    },
+    "languages": {
+      "title": "Top Languages"
+    }
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "toolsOthers": "Tools & Others"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "code": "Code",
+    "liveDemo": "Live Demo"
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "description": "I'm always interested in new opportunities and exciting projects. Let's discuss how we can bring your ideas to life.",
+    "startConversation": "Start a Conversation"
+  },
+  "footer": {
+    "builtWith": "Built with Next.js and Tailwind CSS."
+  },
+  "loading": "Loading..."
+}

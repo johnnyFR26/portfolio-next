@@ -7,6 +7,9 @@ import { Badge } from "@/components/ui/badge"
 import { Github, ExternalLink, Mail, Linkedin, Twitter, Code, Star, GitFork, Users } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { LanguageSwitcher } from "@/components/language-switcher"
+import { getDictionary } from "@/lib/dictionaries"
+import type { Locale } from "@/lib/i18n"
 
 interface GitHubUser {
   name: string
@@ -129,22 +132,31 @@ function calculateLanguageStats(repos: GitHubRepo[]): LanguageStats {
   return stats
 }
 
-export default function Portfolio() {
+export default function Portfolio({ params }: { params: Promise<{ lang: Locale }> }) {
   const [isVisible, setIsVisible] = useState(false)
   const [githubUser, setGithubUser] = useState<GitHubUser | null>(null)
   const [githubRepos, setGithubRepos] = useState<GitHubRepo[]>([])
   const [languageStats, setLanguageStats] = useState<LanguageStats>({})
   const [loading, setLoading] = useState(true)
   const [projects, setProjects] = useState<Project[]>([])
+  const [dict, setDict] = useState<any>(null)
+  const [currentLocale, setCurrentLocale] = useState<Locale>("en")
 
   // Replace with your GitHub username
   const GITHUB_USERNAME = "octocat" // Change this to your GitHub username
 
   useEffect(() => {
-    setIsVisible(true)
+    const loadData = async () => {
+      const resolvedParams = await params
+      setCurrentLocale(resolvedParams.lang)
 
-    // Fetch GitHub data
-    const fetchGitHubData = async () => {
+      // Load dictionary
+      const dictionary = await getDictionary(resolvedParams.lang)
+      setDict(dictionary)
+
+      setIsVisible(true)
+
+      // Fetch GitHub data
       setLoading(true)
       const [user, repos] = await Promise.all([fetchGitHubUser(GITHUB_USERNAME), fetchGitHubRepos(GITHUB_USERNAME)])
 
@@ -154,12 +166,8 @@ export default function Portfolio() {
         setLanguageStats(calculateLanguageStats(repos))
       }
       setLoading(false)
-    }
 
-    fetchGitHubData()
-
-    // Fetch projects data
-    const fetchProjectsData = async () => {
+      // Fetch projects data
       const projectsData: Project[] = [
         {
           title: "Project 1",
@@ -173,28 +181,35 @@ export default function Portfolio() {
           tech: ["Node.js", "Python"],
           image: "/project2.svg",
         },
-        // Add more projects as needed
       ]
       setProjects(projectsData)
     }
 
-    fetchProjectsData()
-  }, [])
+    loadData()
+  }, [params])
+
+  if (!dict) {
+    return (
+      <div className="min-h-screen bg-gray-950 text-white flex items-center justify-center">
+        <div className="text-xl">Loading...</div>
+      </div>
+    )
+  }
 
   const skills = {
-    Frontend: [
+    [dict.skills.frontend]: [
       { name: "React/Next.js", level: 95 },
       { name: "TypeScript", level: 90 },
       { name: "Tailwind CSS", level: 88 },
       { name: "Vue.js", level: 75 },
     ],
-    Backend: [
+    [dict.skills.backend]: [
       { name: "Node.js", level: 85 },
       { name: "Python", level: 80 },
       { name: "PostgreSQL", level: 82 },
       { name: "MongoDB", level: 78 },
     ],
-    "Tools & Others": [
+    [dict.skills.toolsOthers]: [
       { name: "Git/GitHub", level: 92 },
       { name: "Docker", level: 75 },
       { name: "AWS", level: 70 },
@@ -215,10 +230,10 @@ export default function Portfolio() {
     }))
 
   const stats = [
-    { label: "Projects Completed", value: 50, suffix: "+" },
-    { label: "GitHub Repos", value: githubUser?.public_repos || 0, suffix: "" },
-    { label: "Total Stars", value: totalStars, suffix: "" },
-    { label: "Followers", value: githubUser?.followers || 0, suffix: "" },
+    { label: dict.about.stats.projectsCompleted, value: 50, suffix: "+" },
+    { label: dict.about.stats.githubRepos, value: githubUser?.public_repos || 0, suffix: "" },
+    { label: dict.about.stats.totalStars, value: totalStars, suffix: "" },
+    { label: dict.about.stats.followers, value: githubUser?.followers || 0, suffix: "" },
   ]
 
   function getLanguageColor(language: string): string {
@@ -245,16 +260,17 @@ export default function Portfolio() {
           <div className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             {"<Dev />"}
           </div>
-          <div className="flex gap-6">
+          <div className="flex items-center gap-6">
             <Link href="#about" className="hover:text-blue-400 transition-colors">
-              About
+              {dict.nav.about}
             </Link>
             <Link href="#projects" className="hover:text-blue-400 transition-colors">
-              Projects
+              {dict.nav.projects}
             </Link>
             <Link href="#contact" className="hover:text-blue-400 transition-colors">
-              Contact
+              {dict.nav.contact}
             </Link>
+            <LanguageSwitcher currentLocale={currentLocale} />
           </div>
         </div>
       </nav>
@@ -273,16 +289,13 @@ export default function Portfolio() {
               </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Full Stack Developer
+              {dict.hero.title}
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Crafting digital experiences with modern technologies. Passionate about clean code, user experience, and
-              innovative solutions.
-            </p>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">{dict.hero.description}</p>
             <div className="flex gap-4 justify-center mb-12">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
                 <Mail className="w-4 h-4 mr-2" />
-                Get In Touch
+                {dict.hero.getInTouch}
               </Button>
               <Button
                 size="lg"
@@ -290,7 +303,7 @@ export default function Portfolio() {
                 className="border-gray-600 text-white hover:bg-gray-800 bg-transparent"
               >
                 <Github className="w-4 h-4 mr-2" />
-                View GitHub
+                {dict.hero.viewGithub}
               </Button>
             </div>
             <div className="flex gap-6 justify-center">
@@ -312,7 +325,7 @@ export default function Portfolio() {
       <section id="about" className="py-20 px-4 bg-gray-900/50">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            About Me
+            {dict.about.title}
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
             {stats.map((stat, index) => (
@@ -333,7 +346,7 @@ export default function Portfolio() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-white">
                   <Github className="w-5 h-5" />
-                  GitHub Activity
+                  {dict.about.github.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -351,28 +364,28 @@ export default function Portfolio() {
                     <div className="flex items-center justify-between">
                       <span className="text-gray-300 flex items-center gap-2">
                         <Code className="w-4 h-4" />
-                        Total Repositories
+                        {dict.about.github.totalRepositories}
                       </span>
                       <span className="text-blue-400 font-semibold">{githubUser?.public_repos || 0}</span>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-gray-300 flex items-center gap-2">
                         <Star className="w-4 h-4" />
-                        Total Stars
+                        {dict.about.github.totalStars}
                       </span>
                       <span className="text-yellow-400 font-semibold">{totalStars}</span>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-gray-300 flex items-center gap-2">
                         <GitFork className="w-4 h-4" />
-                        Total Forks
+                        {dict.about.github.totalForks}
                       </span>
                       <span className="text-green-400 font-semibold">{totalForks}</span>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-gray-300 flex items-center gap-2">
                         <Users className="w-4 h-4" />
-                        Followers
+                        {dict.about.github.followers}
                       </span>
                       <span className="text-purple-400 font-semibold">{githubUser?.followers || 0}</span>
                     </div>
@@ -385,7 +398,7 @@ export default function Portfolio() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-white">
                   <Code className="w-5 h-5" />
-                  Top Languages
+                  {dict.about.languages.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -429,7 +442,7 @@ export default function Portfolio() {
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Skills & Technologies
+            {dict.skills.title}
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {Object.entries(skills).map(([category, skillList], categoryIndex) => (
@@ -457,7 +470,7 @@ export default function Portfolio() {
       <section id="projects" className="py-20 px-4">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Featured Projects
+            {dict.projects.title}
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
@@ -494,11 +507,11 @@ export default function Portfolio() {
                       className="border-gray-600 text-white hover:bg-gray-700 bg-transparent"
                     >
                       <Github className="w-4 h-4 mr-2" />
-                      Code
+                      {dict.projects.code}
                     </Button>
                     <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
                       <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
+                      {dict.projects.liveDemo}
                     </Button>
                   </div>
                 </CardContent>
@@ -512,18 +525,15 @@ export default function Portfolio() {
       <section id="contact" className="py-20 px-4 bg-gray-900/50">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Let's Work Together
+            {dict.contact.title}
           </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            I'm always interested in new opportunities and exciting projects. Let's discuss how we can bring your ideas
-            to life.
-          </p>
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">{dict.contact.description}</p>
           <Button
             size="lg"
             className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
           >
             <Mail className="w-4 h-4 mr-2" />
-            Start a Conversation
+            {dict.contact.startConversation}
           </Button>
         </div>
       </section>
@@ -531,7 +541,9 @@ export default function Portfolio() {
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-gray-800">
         <div className="container mx-auto text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Your Name. Built with Next.js and Tailwind CSS.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Your Name. {dict.footer.builtWith}
+          </p>
         </div>
       </footer>
     </div>

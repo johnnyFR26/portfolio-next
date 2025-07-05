@@ -1,0 +1,52 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "Desenvolvedor Full Stack",
+    "description": "Criando experiências digitais com tecnologias modernas. Apaixonado por código limpo, experiência do usuário e soluções inovadoras.",
+    "getInTouch": "Entre em Contato",
+    "viewGithub": "Ver GitHub"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "stats": {
+      "projectsCompleted": "Projetos Concluídos",
+      "githubRepos": "Repositórios GitHub",
+      "totalStars": "Total de Stars",
+      "followers": "Seguidores"
+    },
+    "github": {
+      "title": "Atividade GitHub",
+      "totalRepositories": "Total de Repositórios",
+      "totalStars": "Total de Stars",
+      "totalForks": "Total de Forks",
+      "followers": "Seguidores"
+    },
+    "languages": {
+      "title": "Principais Linguagens"
+    }
+  },
+  "skills": {
+    "title": "Habilidades & Tecnologias",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "toolsOthers": "Ferramentas & Outros"
+  },
+  "projects": {
+    "title": "Projetos em Destaque",
+    "code": "Código",
+    "liveDemo": "Demo ao Vivo"
+  },
+  "contact": {
+    "title": "Vamos Trabalhar Juntos",
+    "description": "Estou sempre interessado em novas oportunidades e projetos empolgantes. Vamos discutir como podemos dar vida às suas ideias.",
+    "startConversation": "Iniciar Conversa"
+  },
+  "footer": {
+    "builtWith": "Construído com Next.js e Tailwind CSS."
+  },
+  "loading": "Carregando..."
+}
