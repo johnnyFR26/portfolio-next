@@ -142,9 +142,7 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
   const [dict, setDict] = useState<any>(null)
   const [currentLocale, setCurrentLocale] = useState<Locale>("en")
 
-  // Replace with your GitHub username
-  const GITHUB_USERNAME = "octocat" // Change this to your GitHub username
-
+  const GITHUB_USERNAME = "johnnyFR26"
   useEffect(() => {
     const loadData = async () => {
       const resolvedParams = await params
@@ -170,16 +168,16 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
       // Fetch projects data
       const projectsData: Project[] = [
         {
-          title: "Project 1",
-          description: "Description of Project 1",
-          tech: ["React", "TypeScript"],
-          image: "/project1.svg",
+          title: "Animaldle",
+          description: "Game of guessing animals",
+          tech: ["Angular", "TypeScript", "Adonis"],
+          image: "/placeholder.svg",
         },
         {
-          title: "Project 2",
-          description: "Description of Project 2",
-          tech: ["Node.js", "Python"],
-          image: "/project2.svg",
+          title: "Finanz",
+          description: "Financial management app with AI assistant",
+          tech: ["Angular", "TypeScript", "Fastify", "GraphQL", "Prisma", "n8n"],
+          image: "/placeholder.svg",
         },
       ]
       setProjects(projectsData)
@@ -198,22 +196,22 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
 
   const skills = {
     [dict.skills.frontend]: [
+      { name: "Angular", level: 100 },
       { name: "React/Next.js", level: 95 },
       { name: "TypeScript", level: 90 },
       { name: "Tailwind CSS", level: 88 },
-      { name: "Vue.js", level: 75 },
     ],
     [dict.skills.backend]: [
-      { name: "Node.js", level: 85 },
-      { name: "Python", level: 80 },
+      { name: "Node.js", level: 100 },
+      { name: "Go", level: 80 },
+      { name: "NoSQL", level: 78 },
       { name: "PostgreSQL", level: 82 },
-      { name: "MongoDB", level: 78 },
     ],
     [dict.skills.toolsOthers]: [
       { name: "Git/GitHub", level: 92 },
       { name: "Docker", level: 75 },
       { name: "AWS", level: 70 },
-      { name: "GraphQL", level: 73 },
+      { name: "Pulumi & Terraform", level: 73 },
     ],
   }
 
@@ -307,7 +305,7 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
               </Button>
             </div>
             <div className="flex gap-6 justify-center">
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="https://github.com/johnnyFR26" className="text-gray-400 hover:text-white transition-colors">
                 <Github className="w-6 h-6" />
               </Link>
               <Link href="#" className="text-gray-400 hover:text-white transition-colors">
