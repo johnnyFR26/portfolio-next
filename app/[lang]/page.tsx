@@ -200,6 +200,22 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
           image: "/placeholder.svg",
           gitHubUrl: "https://github.com/johnnyFR26/marktplace",
           liveUrl: "https://marketplace-dun-beta.vercel.app/mundoburguer",
+        },
+        {
+          title: "This Portfolio",
+          description: "Portfolio created with next",
+          tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+          image: "/placeholder.svg",
+          gitHubUrl: "https://github.com/johnnyFR26/portfolio-next",
+          liveUrl: "#",
+        },
+        {
+          title: "Discord Clone",
+          description: "Discord clone",
+          tech: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Socket.io", "Clerk"],
+          image: "/placeholder.svg",
+          gitHubUrl: "https://github.com/johnnyFR26/Fractus-comunity",
+          liveUrl: "https://discordia-wm.vercel.app/",
         }
       ]
       setProjects(projectsData)
