@@ -10,6 +10,8 @@ import Link from "next/link"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { getDictionary } from "@/lib/dictionaries"
 import type { Locale } from "@/lib/i18n"
+import { WebGLBackground, type WebGLSceneType } from "@/components/webgl"
+import { SceneSwitcher } from "@/components/webgl/scene-switcher"
 
 interface GitHubUser {
   name: string
@@ -143,6 +145,7 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
   const [projects, setProjects] = useState<Project[]>([])
   const [dict, setDict] = useState<any>(null)
   const [currentLocale, setCurrentLocale] = useState<Locale>("en")
+  const [webglScene, setWebglScene] = useState<WebGLSceneType>("particles")
 
   const GITHUB_USERNAME = "johnnyFR26"
   useEffect(() => {
@@ -216,7 +219,7 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
           image: "/placeholder.svg",
           gitHubUrl: "https://github.com/johnnyFR26/Fractus-comunity",
           liveUrl: "https://discordia-wm.vercel.app/",
-        }
+        },
       ]
       setProjects(projectsData)
     }
@@ -289,7 +292,9 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
   }
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <div className="min-h-screen bg-gray-950 text-white relative">
+      <WebGLBackground scene={webglScene} />
+
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-gray-950/80 backdrop-blur-md border-b border-gray-800 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -312,7 +317,7 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
+      <section className="pt-32 pb-20 px-4 relative">
         <div className="container mx-auto text-center">
           <div
             className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
@@ -355,6 +360,10 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
               <Link href="#" className="text-gray-400 hover:text-white transition-colors">
                 <Twitter className="w-6 h-6" />
               </Link>
+            </div>
+            <div className="mt-12">
+              <p className="text-gray-400 text-sm mb-4">{dict.hero.changeBackground || "Change Background"}</p>
+              <SceneSwitcher currentScene={webglScene} onSceneChange={setWebglScene} labels={dict.webgl} />
             </div>
           </div>
         </div>
@@ -547,14 +556,14 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
                       className="border-gray-600 text-white hover:bg-gray-700 bg-transparent"
                     >
                       <Link href={project.gitHubUrl}>
-                      <Github className="w-4 h-4 mr-2" />
-                      {dict.projects.code}
+                        <Github className="w-4 h-4 mr-2" />
+                        {dict.projects.code}
                       </Link>
                     </Button>
                     <Button asChild size="sm" className="bg-blue-600 hover:bg-blue-700">
                       <Link href={project.liveUrl}>
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      {dict.projects.liveDemo}
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        {dict.projects.liveDemo}
                       </Link>
                     </Button>
                   </div>

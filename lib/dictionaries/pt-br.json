@@ -8,7 +8,8 @@
     "title": "Desenvolvedor Full Cycle",
     "description": "Criando experiências digitais com tecnologias modernas. Apaixonado por código limpo, experiência do usuário e soluções inovadoras.",
     "getInTouch": "Entre em Contato",
-    "viewGithub": "Ver GitHub"
+    "viewGithub": "Ver GitHub",
+    "changeBackground": "Mudar Fundo"
   },
   "about": {
     "title": "Sobre Mim",
@@ -48,5 +49,12 @@
   "footer": {
     "builtWith": "Construído com Next.js e Tailwind CSS."
   },
-  "loading": "Carregando..."
+  "loading": "Carregando...",
+  "webgl": {
+    "particles": "Partículas",
+    "shapes": "Formas",
+    "wave": "Onda",
+    "gradient": "Gradiente",
+    "neural": "Neural"
+  }
 }
