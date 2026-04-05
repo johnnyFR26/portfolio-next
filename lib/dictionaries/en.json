@@ -1,13 +1,17 @@
 {
   "nav": {
     "about": "About",
+    "skills": "Skills",
     "projects": "Projects",
     "contact": "Contact"
   },
   "hero": {
-    "title": "Full Cycle Developer",
-    "description": "Crafting digital experiences with modern technologies. Passionate about clean code, user experience, and innovative solutions.",
+    "greeting": "Hello, I'm",
+    "name": "Johnny Fontes Rabelo",
+    "title": "Full Stack Developer",
+    "description": "Building modern web experiences with cutting-edge technologies. Focused on creating performant, accessible, and beautiful applications.",
     "getInTouch": "Get In Touch",
+    "viewProjects": "View Projects",
     "viewGithub": "View GitHub",
     "changeBackground": "Change Background"
   },
@@ -34,7 +38,131 @@
     "title": "Skills & Technologies",
     "frontend": "Frontend",
     "backend": "Backend",
-    "toolsOthers": "Tools & Others"
+    "toolsOthers": "Tools & Others",
+    "exploreFullCycle": "Explore Full Cycle Engineering"
+  },
+  "skillsPage": {
+    "sidebar": {
+      "architecture": "ARCHITECTURE",
+      "systems": "SYSTEMS",
+      "data": "DATA",
+      "infrastructure": "INFRASTRUCTURE",
+      "hireMe": "HIRE_ME",
+      "settings": "SETTINGS",
+      "logs": "LOGS",
+      "rootDir": "ROOT_DIR",
+      "version": "v2.4.0-STABLE",
+      "rootAccess": "ROOT_ACCESS"
+    },
+    "frontend": {
+      "label": "// FRONTEND ARCHITECTURE",
+      "title1": "PRECISION",
+      "title2": "INTERFACES.",
+      "description": "Senior Engineering focused on high-performance Angular ecosystems, micro-frontends, and industrial-grade UI/UX paradigms. Engineered for speed, scale, and semantic integrity.",
+      "systemHealth": "SYSTEM HEALTH",
+      "uptimeStable": "UPTIME STABLE",
+      "lighthousePerf": "LIGHTHOUSE PERF",
+      "fastestTti": "FASTEST TTI",
+      "timeToInteractive": "TIME TO INTERACTIVE < 0.8S",
+      "latencyReduction": "LATENCY REDUCTION VIA RXJS PIPES",
+      "uiEngine": "UI ENGINE",
+      "proceduralUi": "PROCEDURAL UI GENERATION USING CSS VARIABLES AND DYNAMIC LAYOUT ANCHORS.",
+      "executionStack": "EXECUTION_STACK",
+      "technicalCapabilities": "TECHNICAL CAPABILITIES",
+      "reactiveCore": "Reactive Core",
+      "reactiveCoreDesc": "Deep expertise in asynchronous data streams using RxJS and NgRx. Mastery of Angular's evolution from Observables to the latest Signals architecture for atomic UI updates.",
+      "industrialUi": "Industrial UI",
+      "industrialUiDesc": "Crafting high-fidelity components that balance aesthetic complexity with technical lightness. Utilizing Tailwind's utility-first paradigm to build scalable design systems.",
+      "developerUx": "Developer UX",
+      "developerUxDesc": "Frontend isn't just for users; it's for performance. Implementing strict CI/CD linting, modular testing, and accessible patterns as a core development philosophy."
+    },
+    "backend": {
+      "label": "—— SYSTEM_ENGINEERING",
+      "title1": "BACKEND",
+      "title2": "&",
+      "title3": "SCALABILITY",
+      "description": "Architecting high-throughput distributed systems using modular monoliths and microservices. Prioritizing clean architecture and decoupled patterns for infinite vertical and horizontal growth.",
+      "techStack": "TECH_STACK // CORE",
+      "highConcurrency": "HIGH_CONCURRENCY",
+      "dxOptimized": "DX_OPTIMIZED",
+      "enterpriseGrade": "ENTERPRISE_GRADE",
+      "systemArchitecture": "SYSTEM_ARCHITECTURE_BLUEPRINT",
+      "schemaVersion": "SCHEMA_V2.0_SCALABLE_DISTRIBUTED",
+      "apiGateway": "API GATEWAY",
+      "apiGatewayDesc": "Rate limiting, Auth, and Request aggregation via Envoy.",
+      "modularMicroservices": "MODULAR MICROSERVICES",
+      "kubernetesOrchestrated": "KUBERNETES_ORCHESTRATED",
+      "kafkaBus": "KAFKA_BUS",
+      "kafkaBusDesc": "Event-driven messaging for async communication.",
+      "persistenceLayer": "PERSISTENCE_LAYER",
+      "relational": "RELATIONAL",
+      "cache": "CACHE",
+      "search": "SEARCH",
+      "engineeringPatterns": "ENGINEERING_PATTERNS",
+      "solidClean": "SOLID & Clean Architecture",
+      "solidCleanDesc": "Strict dependency inversion to decouple business logic from framework concerns. Use of use-cases/interactors for predictable control flow and testability.",
+      "cqrsEvent": "CQRS & Event Sourcing",
+      "cqrsEventDesc": "Separating read and write models to optimize performance and maintain a granular audit log of every state change across the system.",
+      "ddd": "Domain Driven Design",
+      "dddDesc": "Modeling complex business logic into bounded contexts, ensuring high cohesion within services and loose coupling between them.",
+      "quoteLog": "QUOTE_LOG",
+      "quote": "Scalability is not about handling more traffic; it's about handling growth without increasing complexity."
+    },
+    "database": {
+      "label": "—— SUBSYSTEM: DATA INTEGRITY",
+      "title1": "OPTIMIZED",
+      "title2": "DATA_STORAGE",
+      "description": "Engineering high-performance persistence layers with atomic precision. Specializing in query optimization, multi-node orchestration, and seamless ORM integration.",
+      "liveThroughput": "Live Throughput",
+      "latency": "LATENCY",
+      "read": "READ",
+      "monitorActive": "MONITOR_ACTIVE_01",
+      "uptimeStability": "UPTIME STABILITY",
+      "engineStack": "ENGINE_STACK",
+      "ormPreference": "ORM PREFERENCE",
+      "coreCapabilities": "CORE_CAPABILITIES",
+      "optimizedSearches": "OPTIMIZED SEARCHES",
+      "optimizedSearchesDesc": "Implementation of complex full-text search engines and fuzzy matching logic to reduce query times by up to 80% on large datasets.",
+      "advancedIndexing": "ADVANCED INDEXING",
+      "advancedIndexingDesc": "Strategic B-Tree, GIN, and GIST indexing strategies. Balancing write overhead with read performance for mission-critical applications.",
+      "proceduresTriggers": "PROCEDURES & TRIGGERS",
+      "proceduresTriggersDesc": "Encapsulating complex business logic within the database layer using PL/pgSQL to ensure data integrity and reduce network round-trips.",
+      "prismaExpert": "PRISMA_ORM",
+      "expert": "EXPERT",
+      "prismaDesc": "Leveraging type-safe database access to build resilient backends. I specialize in complex relational modeling, migrations, and automated seed scripting."
+    },
+    "cloud": {
+      "label": "SPECIALIZATION_04",
+      "title1": "CLOUD &",
+      "title2": "PLATFORM",
+      "description": "Engineering scalable, deterministic infrastructure through code. Bridging the gap between distributed systems architecture and operational excellence using modern cloud-native primitives.",
+      "provisioningEngine": "PROVISIONING_ENGINE",
+      "deterministicEnv": "DETERMINISTIC ENVIRONMENTS",
+      "deterministicEnvDesc": "Eliminating configuration drift through immutable infrastructure principles and GitOps workflows.",
+      "architectureVisualizer": "ARCHITECTURE_VISUALIZER",
+      "observability": "OBSERVABILITY",
+      "jaegerTracing": "JAEGER TRACING",
+      "jaegerTracingDesc": "Distributed context propagation for high-latency bottleneck identification.",
+      "opentelemetry": "OPENTELEMETRY",
+      "opentelemetryDesc": "Vendor-neutral instrumentation across multiple service clusters.",
+      "grafanaDashboards": "GRAFANA DASHBOARDS",
+      "grafanaDashboardsDesc": "Customized SLI/SLO visualization for real-time fleet health.",
+      "metricExplorer": "METRIC_EXPLORER // NODE_HEALTH",
+      "cpuUsage": "CPU_USAGE",
+      "requestLatency": "REQUEST_LATENCY",
+      "activeDeployments": "ACTIVE_DEPLOYMENTS",
+      "count": "COUNT",
+      "projectA": "Zero-Trust Network Bridge",
+      "projectADesc": "Implementation of Tailscale mesh VPN within AWS private subnets for secure inter-region communication.",
+      "projectB": "Auto-Scaling ML Fleet",
+      "projectBDesc": "Kubernetes-based dynamic provisioning for GPU-heavy training workloads with cost optimization logic.",
+      "projectC": "Log Streaming Pipeline",
+      "projectCDesc": "High-throughput data ingestion using Vector and Clickhouse for real-time security auditing.",
+      "explore": "EXPLORE"
+    },
+    "footer": {
+      "copyright": "© 2024 PRECISION_ENGINEERING // KINETIC_TERMINAL"
+    }
   },
   "projects": {
     "title": "Featured Projects",
@@ -56,5 +184,35 @@
     "wave": "Wave",
     "gradient": "Gradient",
     "neural": "Neural"
+  },
+  "fullCycle": {
+    "title": "System",
+    "titleHighlight": "Architecture",
+    "description": "Deep expertise across the entire software stack. From pixel-perfect interfaces to distributed cloud infrastructure.",
+    "frontend": {
+      "title": "FRONTEND",
+      "subtitle": "Precision Interfaces",
+      "description": "Angular Signals, RxJS, Tailwind CSS. High-performance UI/UX engineering.",
+      "stats": "99.8% Uptime"
+    },
+    "backend": {
+      "title": "BACKEND",
+      "subtitle": "Scalable Systems",
+      "description": "Node.js, Go, Clean Architecture. Microservices & event-driven design.",
+      "stats": "45k req/sec"
+    },
+    "database": {
+      "title": "DATABASE",
+      "subtitle": "Data Storage",
+      "description": "PostgreSQL, Redis, Prisma ORM. Query optimization & indexing.",
+      "stats": "99.98% Stability"
+    },
+    "cloud": {
+      "title": "CLOUD",
+      "subtitle": "Platform Engineering",
+      "description": "AWS, Kubernetes, Pulumi. Infrastructure as Code & GitOps.",
+      "stats": "Zero Drift"
+    },
+    "explore": "EXPLORE"
   }
 }

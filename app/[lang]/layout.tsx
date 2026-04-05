@@ -13,15 +13,16 @@ export const metadata: Metadata = {
   generator: "Johnny Fontes Rabelo",
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: {
   children: React.ReactNode
   params: Promise<{ lang: string }>
 }) {
+  const resolvedParams = await params
   return (
-    <html lang={(params as any).lang}>
+    <html lang={resolvedParams.lang}>
       <body>{children}</body>
     </html>
   )

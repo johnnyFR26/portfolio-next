@@ -310,6 +310,9 @@ function KineticNav({ dict, currentLocale }: { dict: any; currentLocale: Locale 
         </motion.div>
         
         <div className="flex items-center gap-8">
+          <Link href={`/${currentLocale}/skills`} className="nav-kinetic font-body text-sm uppercase tracking-wider">
+            {dict.nav.skills}
+          </Link>
           {['about', 'projects', 'contact'].map((section) => (
             <Link key={section} href={`#${section}`} className="nav-kinetic font-body text-sm uppercase tracking-wider">
               {dict.nav[section]}
@@ -601,7 +604,7 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
               <div className="w-24 h-1 mx-auto bg-gradient-to-r from-kinetic-primary to-kinetic-secondary" />
             </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
               {Object.entries(skills).map(([category, skillList], categoryIndex) => (
                 <motion.div key={category} variants={scaleIn} className="card-kinetic p-8">
                   <div className="flex items-center gap-3 mb-6">
@@ -618,12 +621,117 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
                 </motion.div>
               ))}
             </div>
+
+            {/* Full Cycle Skills CTA */}
+            <motion.div variants={fadeUp} className="text-center">
+              <Link 
+                href={`/${currentLocale}/skills`}
+                className="group inline-flex items-center gap-4 px-8 py-4 bg-surface-container-low border border-surface-container-high hover:border-kinetic-primary transition-all duration-300"
+              >
+                <div className="flex items-center gap-2">
+                  <Terminal className="w-5 h-5 text-kinetic-primary" />
+                  <span className="font-code text-sm text-kinetic-primary">KINETIC_CORE</span>
+                </div>
+                <span className="font-headline text-lg">Explore Full Cycle Engineering</span>
+                <div className="flex items-center gap-1 text-[var(--on-surface-variant)] group-hover:text-kinetic-primary transition-colors">
+                  <span className="text-xs font-code">Frontend • Backend • Database • Cloud</span>
+                  <ChevronDown className="w-4 h-4 -rotate-90" />
+                </div>
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Full Cycle Engineering Section */}
+      <section className="py-24 px-6 bg-surface-container-lowest">
+        <div className="container mx-auto">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={staggerContainer}>
+            <motion.div variants={fadeUp} className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-surface-container-low font-code text-xs text-kinetic-primary mb-6">
+                <Cpu className="w-4 h-4" />
+                <span>FULL_CYCLE_ENGINEERING</span>
+              </div>
+              <h2 className="font-headline text-4xl md:text-5xl font-bold mb-4">
+                <span className="text-[var(--on-surface)]">System </span>
+                <span className="gradient-text">Architecture</span>
+              </h2>
+              <p className="text-[var(--on-surface-variant)] max-w-2xl mx-auto">
+                Deep expertise across the entire software stack. From pixel-perfect interfaces to distributed cloud infrastructure.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  id: 'frontend',
+                  icon: Code,
+                  title: 'FRONTEND',
+                  subtitle: 'Precision Interfaces',
+                  description: 'Angular Signals, RxJS, Tailwind CSS. High-performance UI/UX engineering.',
+                  color: 'kinetic-primary',
+                  stats: '99.8% Uptime'
+                },
+                {
+                  id: 'backend',
+                  icon: Database,
+                  title: 'BACKEND',
+                  subtitle: 'Scalable Systems',
+                  description: 'Node.js, Go, Clean Architecture. Microservices & event-driven design.',
+                  color: 'kinetic-secondary',
+                  stats: '45k req/sec'
+                },
+                {
+                  id: 'database',
+                  icon: Terminal,
+                  title: 'DATABASE',
+                  subtitle: 'Data Storage',
+                  description: 'PostgreSQL, Redis, Prisma ORM. Query optimization & indexing.',
+                  color: 'yellow-400',
+                  stats: '99.98% Stability'
+                },
+                {
+                  id: 'cloud',
+                  icon: Cloud,
+                  title: 'CLOUD',
+                  subtitle: 'Platform Engineering',
+                  description: 'AWS, Kubernetes, Pulumi. Infrastructure as Code & GitOps.',
+                  color: 'green-400',
+                  stats: 'Zero Drift'
+                }
+              ].map((item, index) => (
+                <motion.div key={item.id} variants={scaleIn}>
+                  <Link
+                    href={`/${currentLocale}/skills?tab=${item.id}`}
+                    className="group block h-full bg-surface-container-low border border-surface-container-high p-6 hover:border-kinetic-primary transition-all duration-300 relative overflow-hidden"
+                  >
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-kinetic-primary to-kinetic-secondary opacity-0 group-hover:opacity-100 transition-opacity" />
+                    
+                    <div className="flex items-center justify-between mb-4">
+                      <div className={`w-10 h-10 flex items-center justify-center bg-${item.color}/10`}>
+                        <item.icon className={`w-5 h-5 text-${item.color}`} />
+                      </div>
+                      <span className="text-xs font-code text-kinetic-primary">{item.stats}</span>
+                    </div>
+                    
+                    <div className="text-xs font-code text-[var(--on-surface-variant)] mb-1">{item.title}</div>
+                    <h3 className="font-headline text-lg font-bold mb-2 group-hover:text-kinetic-primary transition-colors">{item.subtitle}</h3>
+                    <p className="text-sm text-[var(--on-surface-variant)] mb-4">{item.description}</p>
+                    
+                    <div className="flex items-center gap-2 text-kinetic-primary text-sm font-code">
+                      <span>EXPLORE</span>
+                      <ChevronDown className="w-4 h-4 -rotate-90 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-24 px-6 bg-surface-container-lowest">
+      <section id="projects" className="py-24 px-6 bg-surface">
         <div className="container mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={staggerContainer}>
             <motion.div variants={fadeUp} className="text-center mb-16">
@@ -639,7 +747,7 @@ export default function Portfolio({ params }: { params: Promise<{ lang: Locale }
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 px-6 bg-surface relative overflow-hidden">
+      <section id="contact" className="py-24 px-6 bg-surface-container-lowest relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-kinetic-primary/5 blur-[100px]" />
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-kinetic-secondary/5 blur-[100px]" />

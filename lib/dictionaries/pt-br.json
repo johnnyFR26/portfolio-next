@@ -1,13 +1,17 @@
 {
   "nav": {
     "about": "Sobre",
+    "skills": "Habilidades",
     "projects": "Projetos",
     "contact": "Contato"
   },
   "hero": {
-    "title": "Desenvolvedor Full Cycle",
-    "description": "Criando experiências digitais com tecnologias modernas. Apaixonado por código limpo, experiência do usuário e soluções inovadoras.",
+    "greeting": "Olá, eu sou",
+    "name": "Johnny Fontes Rabelo",
+    "title": "Desenvolvedor Full Stack",
+    "description": "Construindo experiências web modernas com tecnologias de ponta. Focado em criar aplicações performáticas, acessíveis e bonitas.",
     "getInTouch": "Entre em Contato",
+    "viewProjects": "Ver Projetos",
     "viewGithub": "Ver GitHub",
     "changeBackground": "Mudar Fundo"
   },
@@ -34,7 +38,131 @@
     "title": "Habilidades & Tecnologias",
     "frontend": "Frontend",
     "backend": "Backend",
-    "toolsOthers": "Ferramentas & Outros"
+    "toolsOthers": "Ferramentas & Outros",
+    "exploreFullCycle": "Explorar Engenharia Full Cycle"
+  },
+  "skillsPage": {
+    "sidebar": {
+      "architecture": "ARQUITETURA",
+      "systems": "SISTEMAS",
+      "data": "DADOS",
+      "infrastructure": "INFRAESTRUTURA",
+      "hireMe": "CONTRATE_ME",
+      "settings": "CONFIGURAÇÕES",
+      "logs": "LOGS",
+      "rootDir": "DIR_RAIZ",
+      "version": "v2.4.0-ESTÁVEL",
+      "rootAccess": "ACESSO_RAIZ"
+    },
+    "frontend": {
+      "label": "// ARQUITETURA FRONTEND",
+      "title1": "INTERFACES",
+      "title2": "PRECISAS.",
+      "description": "Engenharia Sênior focada em ecossistemas Angular de alta performance, micro-frontends e paradigmas UI/UX de nível industrial. Projetado para velocidade, escala e integridade semântica.",
+      "systemHealth": "SAÚDE DO SISTEMA",
+      "uptimeStable": "UPTIME ESTÁVEL",
+      "lighthousePerf": "PERF LIGHTHOUSE",
+      "fastestTti": "TTI MAIS RÁPIDO",
+      "timeToInteractive": "TEMPO PARA INTERATIVO < 0.8S",
+      "latencyReduction": "REDUÇÃO DE LATÊNCIA VIA PIPES RXJS",
+      "uiEngine": "MOTOR UI",
+      "proceduralUi": "GERAÇÃO PROCEDURAL DE UI USANDO VARIÁVEIS CSS E ÂNCORAS DE LAYOUT DINÂMICAS.",
+      "executionStack": "STACK_DE_EXECUÇÃO",
+      "technicalCapabilities": "CAPACIDADES TÉCNICAS",
+      "reactiveCore": "Núcleo Reativo",
+      "reactiveCoreDesc": "Expertise profunda em streams de dados assíncronos usando RxJS e NgRx. Domínio da evolução do Angular de Observables para a arquitetura Signals mais recente para atualizações atômicas de UI.",
+      "industrialUi": "UI Industrial",
+      "industrialUiDesc": "Criando componentes de alta fidelidade que equilibram complexidade estética com leveza técnica. Utilizando o paradigma utility-first do Tailwind para construir design systems escaláveis.",
+      "developerUx": "UX do Desenvolvedor",
+      "developerUxDesc": "Frontend não é apenas para usuários; é para performance. Implementando linting CI/CD rigoroso, testes modulares e padrões acessíveis como filosofia central de desenvolvimento."
+    },
+    "backend": {
+      "label": "—— ENGENHARIA_DE_SISTEMAS",
+      "title1": "BACKEND",
+      "title2": "&",
+      "title3": "ESCALABILIDADE",
+      "description": "Arquitetando sistemas distribuídos de alto throughput usando monolitos modulares e microsserviços. Priorizando arquitetura limpa e padrões desacoplados para crescimento vertical e horizontal infinito.",
+      "techStack": "STACK_TECH // CORE",
+      "highConcurrency": "ALTA_CONCORRÊNCIA",
+      "dxOptimized": "DX_OTIMIZADO",
+      "enterpriseGrade": "NÍVEL_ENTERPRISE",
+      "systemArchitecture": "BLUEPRINT_ARQUITETURA_SISTEMA",
+      "schemaVersion": "SCHEMA_V2.0_ESCALÁVEL_DISTRIBUÍDO",
+      "apiGateway": "API GATEWAY",
+      "apiGatewayDesc": "Rate limiting, Auth e agregação de requisições via Envoy.",
+      "modularMicroservices": "MICROSSERVIÇOS MODULARES",
+      "kubernetesOrchestrated": "ORQUESTRADO_KUBERNETES",
+      "kafkaBus": "BUS_KAFKA",
+      "kafkaBusDesc": "Mensageria orientada a eventos para comunicação assíncrona.",
+      "persistenceLayer": "CAMADA_PERSISTÊNCIA",
+      "relational": "RELACIONAL",
+      "cache": "CACHE",
+      "search": "BUSCA",
+      "engineeringPatterns": "PADRÕES_ENGENHARIA",
+      "solidClean": "SOLID & Arquitetura Limpa",
+      "solidCleanDesc": "Inversão de dependência rigorosa para desacoplar lógica de negócio de preocupações de framework. Uso de use-cases/interactors para fluxo de controle previsível e testabilidade.",
+      "cqrsEvent": "CQRS & Event Sourcing",
+      "cqrsEventDesc": "Separando modelos de leitura e escrita para otimizar performance e manter um log de auditoria granular de cada mudança de estado no sistema.",
+      "ddd": "Domain Driven Design",
+      "dddDesc": "Modelando lógica de negócio complexa em contextos delimitados, garantindo alta coesão dentro de serviços e baixo acoplamento entre eles.",
+      "quoteLog": "LOG_CITAÇÃO",
+      "quote": "Escalabilidade não é sobre lidar com mais tráfego; é sobre lidar com crescimento sem aumentar complexidade."
+    },
+    "database": {
+      "label": "—— SUBSISTEMA: INTEGRIDADE DE DADOS",
+      "title1": "ARMAZENAMENTO",
+      "title2": "DE_DADOS_OTIMIZADO",
+      "description": "Engenharia de camadas de persistência de alta performance com precisão atômica. Especializado em otimização de queries, orquestração multi-node e integração seamless de ORM.",
+      "liveThroughput": "Throughput ao Vivo",
+      "latency": "LATÊNCIA",
+      "read": "LEITURA",
+      "monitorActive": "MONITOR_ATIVO_01",
+      "uptimeStability": "ESTABILIDADE UPTIME",
+      "engineStack": "STACK_ENGINE",
+      "ormPreference": "PREFERÊNCIA ORM",
+      "coreCapabilities": "CAPACIDADES_CORE",
+      "optimizedSearches": "BUSCAS OTIMIZADAS",
+      "optimizedSearchesDesc": "Implementação de engines de busca full-text complexas e lógica de matching fuzzy para reduzir tempos de query em até 80% em grandes datasets.",
+      "advancedIndexing": "INDEXAÇÃO AVANÇADA",
+      "advancedIndexingDesc": "Estratégias de indexação B-Tree, GIN e GIST estratégicas. Balanceando overhead de escrita com performance de leitura para aplicações mission-critical.",
+      "proceduresTriggers": "PROCEDURES & TRIGGERS",
+      "proceduresTriggersDesc": "Encapsulando lógica de negócio complexa na camada de banco de dados usando PL/pgSQL para garantir integridade de dados e reduzir round-trips de rede.",
+      "prismaExpert": "PRISMA_ORM",
+      "expert": "EXPERT",
+      "prismaDesc": "Aproveitando acesso type-safe a banco de dados para construir backends resilientes. Especializado em modelagem relacional complexa, migrations e scripting automatizado de seeds."
+    },
+    "cloud": {
+      "label": "ESPECIALIZAÇÃO_04",
+      "title1": "CLOUD &",
+      "title2": "PLATAFORMA",
+      "description": "Engenharia de infraestrutura escalável e determinística através de código. Conectando a lacuna entre arquitetura de sistemas distribuídos e excelência operacional usando primitivos cloud-native modernos.",
+      "provisioningEngine": "ENGINE_PROVISIONAMENTO",
+      "deterministicEnv": "AMBIENTES DETERMINÍSTICOS",
+      "deterministicEnvDesc": "Eliminando drift de configuração através de princípios de infraestrutura imutável e workflows GitOps.",
+      "architectureVisualizer": "VISUALIZADOR_ARQUITETURA",
+      "observability": "OBSERVABILIDADE",
+      "jaegerTracing": "JAEGER TRACING",
+      "jaegerTracingDesc": "Propagação de contexto distribuído para identificação de gargalos de alta latência.",
+      "opentelemetry": "OPENTELEMETRY",
+      "opentelemetryDesc": "Instrumentação vendor-neutral através de múltiplos clusters de serviço.",
+      "grafanaDashboards": "DASHBOARDS GRAFANA",
+      "grafanaDashboardsDesc": "Visualização customizada de SLI/SLO para saúde da frota em tempo real.",
+      "metricExplorer": "EXPLORADOR_MÉTRICAS // SAÚDE_NODE",
+      "cpuUsage": "USO_CPU",
+      "requestLatency": "LATÊNCIA_REQUISIÇÃO",
+      "activeDeployments": "DEPLOYMENTS_ATIVOS",
+      "count": "CONTAGEM",
+      "projectA": "Bridge de Rede Zero-Trust",
+      "projectADesc": "Implementação de VPN mesh Tailscale dentro de subnets privadas AWS para comunicação inter-região segura.",
+      "projectB": "Frota ML Auto-Scaling",
+      "projectBDesc": "Provisionamento dinâmico baseado em Kubernetes para workloads de treinamento GPU-heavy com lógica de otimização de custos.",
+      "projectC": "Pipeline de Streaming de Logs",
+      "projectCDesc": "Ingestão de dados de alto throughput usando Vector e Clickhouse para auditoria de segurança em tempo real.",
+      "explore": "EXPLORAR"
+    },
+    "footer": {
+      "copyright": "© 2024 ENGENHARIA_DE_PRECISÃO // TERMINAL_KINETIC"
+    }
   },
   "projects": {
     "title": "Projetos em Destaque",
@@ -56,5 +184,35 @@
     "wave": "Onda",
     "gradient": "Gradiente",
     "neural": "Neural"
+  },
+  "fullCycle": {
+    "title": "Arquitetura",
+    "titleHighlight": "de Sistemas",
+    "description": "Expertise profunda em toda a stack de software. De interfaces pixel-perfect a infraestrutura cloud distribuída.",
+    "frontend": {
+      "title": "FRONTEND",
+      "subtitle": "Interfaces Precisas",
+      "description": "Angular Signals, RxJS, Tailwind CSS. Engenharia UI/UX de alta performance.",
+      "stats": "99.8% Uptime"
+    },
+    "backend": {
+      "title": "BACKEND",
+      "subtitle": "Sistemas Escaláveis",
+      "description": "Node.js, Go, Arquitetura Limpa. Microsserviços & design event-driven.",
+      "stats": "45k req/seg"
+    },
+    "database": {
+      "title": "DATABASE",
+      "subtitle": "Armazenamento de Dados",
+      "description": "PostgreSQL, Redis, Prisma ORM. Otimização de queries & indexação.",
+      "stats": "99.98% Estabilidade"
+    },
+    "cloud": {
+      "title": "CLOUD",
+      "subtitle": "Engenharia de Plataforma",
+      "description": "AWS, Kubernetes, Pulumi. Infraestrutura como Código & GitOps.",
+      "stats": "Zero Drift"
+    },
+    "explore": "EXPLORAR"
   }
 }
