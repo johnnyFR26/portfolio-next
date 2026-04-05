@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, Suspense } from "react"
 import { motion, AnimatePresence, useInView, useSpring, useTransform } from "framer-motion"
 import { 
   Settings, Hash, Database, Cloud, Code, Terminal, Zap, 
@@ -1411,9 +1411,9 @@ const cluster = new aws.ecs.Cluster("platform-core", {
 }
 
 // ============================================
-// MAIN SKILLS PAGE COMPONENT
+// SKILLS PAGE CONTENT (with useSearchParams)
 // ============================================
-export default function SkillsPage({ params }: { params: Promise<{ lang: Locale }> }) {
+function SkillsPageContent({ params }: { params: Promise<{ lang: Locale }> }) {
   const searchParams = useSearchParams()
   const tabFromUrl = searchParams.get('tab') as TabType | null
   const [activeTab, setActiveTab] = useState<TabType>(tabFromUrl || 'frontend')
@@ -1601,5 +1601,30 @@ export default function SkillsPage({ params }: { params: Promise<{ lang: Locale 
         </footer>
       </div>
     </div>
+  )
+}
+
+// ============================================
+// LOADING FALLBACK COMPONENT
+// ============================================
+function SkillsLoadingFallback() {
+  return (
+    <div className="min-h-screen bg-surface text-[var(--on-surface)] flex items-center justify-center">
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center">
+        <div className="w-16 h-16 mx-auto mb-4 border-2 border-kinetic-primary border-t-transparent animate-spin" />
+        <p className="font-code text-kinetic-primary">Initializing...</p>
+      </motion.div>
+    </div>
+  )
+}
+
+// ============================================
+// MAIN SKILLS PAGE COMPONENT (with Suspense)
+// ============================================
+export default function SkillsPage({ params }: { params: Promise<{ lang: Locale }> }) {
+  return (
+    <Suspense fallback={<SkillsLoadingFallback />}>
+      <SkillsPageContent params={params} />
+    </Suspense>
   )
 }
